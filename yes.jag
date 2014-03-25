@@ -1,5 +1,5 @@
-<h1>Yes</h1>
 <%
 var votes = application.get('votes');
 votes.push("Yes");
 %>
+YES

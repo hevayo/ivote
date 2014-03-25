@@ -46,25 +46,48 @@ $(document).ready(function(){
         }
   });
 
-  var plot3 = jQuery.jqplot ('linechart', [[0],[0]]);
 
-
+ var plot3 = jQuery.jqplot ('linechart', [[0],[0]],{seriesColors:seriesColors});;
  window.setInterval(function(){
   	$.ajax({
 		url: "http://10.100.5.20:9763/ivote/count",
 		dataType: "json",
-		// the name of the callback parameter, as specified by the YQL service
-		// tell jQuery we're expecting JSONP
-		// work with the response
 		success: function( response ) {
+
+      $("#total_votes").text("Total Votes : 9");
 			var data = [["Yes",response.yes],["No",response.no]];
 			plot1.series[0].data = data;
 			plot1.replot();
 			plot2.series[0].data = [[3,7]];
 			plot2.replot(false);
-			plot3.series[0].data = [[2,3,4]];
-			plot3.series[1].data = [[3,5,6]];
-			plot3.replot(false);
+
+      var yes_line = [];
+      var no_line = []
+      for(var i =0; i < response.history.length; i++){
+        yes_line.push(response.history[i].yes);
+        no_line.push(response.history[i].no);
+      }      
+      plot3.destroy();
+			plot3 = jQuery.jqplot ('linechart', [yes_line,no_line],{seriesColors:seriesColors});
+
+
+      plot2.destroy();
+      plot2 = jQuery.jqplot ('barchart',[data], {
+        // Provide a custom seriesColors array to override the default colors.
+        seriesColors:seriesColors,
+        seriesDefaults:{
+            renderer:$.jqplot.BarRenderer,
+            rendererOptions: {
+                // Set varyBarColor to tru to use the custom colors on the bars.
+                varyBarColor: true
+            }
+        },
+        axes:{
+            xaxis:{
+                renderer: $.jqplot.CategoryAxisRenderer
+            }          
+        }
+      });
 		}
 	}); 	
  }, 3000);
