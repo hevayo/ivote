@@ -43,17 +43,8 @@ var archive = application.get('archive');
 
         <div class="cover-container">
 
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand" id="masthead_brand" style="font-family: 'fontellob';color:#FF6600;">iVote</h3>
-              <ul class="nav masthead-nav">
-                <li><a href="#">Results</a></li>
-              </ul>
-            </div>
-          </div>
-
           <div class="inner cover">
-            <h1 class="cover-heading">Please Vote!</h1>
+            <h1 class="cover-heading" style="font-family: 'fontellob';color:#FF6600;">Vote Here !</h1>
                   	<nav>
 	    <ul class="navi">
 	        <li>
@@ -70,12 +61,11 @@ var archive = application.get('archive');
 	        </li>
 	    </ul>
 		</nav> 
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis mattis lacus, ac cursus dui. Aliquam quis sem justo.</p>
           </div>
 
           <div class="mastfoot">
             <div class="inner">
-              <p><a href="http://wso2.com">WSo2</a> CEP Demo, by <a href="https://twitter.com/sumedha">@sumedha</a>.</p>
+              <p><a href="http://wso2.com">WSo2</a> Con 2014.</p>
             </div>
           </div>
 

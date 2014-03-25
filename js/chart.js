@@ -1,7 +1,9 @@
+var APP_URL = "http://10.100.5.20:9763/ivote/";
+
 $(document).ready(function(){
 
   var data = [
-    ['Yes', 10],['No', 3]
+    ['Yes', 0],['No', 0]
   ];
 	var seriesColors = ["green","red"];
 
@@ -50,11 +52,11 @@ $(document).ready(function(){
  var plot3 = jQuery.jqplot ('linechart', [[0],[0]],{seriesColors:seriesColors});;
  window.setInterval(function(){
   	$.ajax({
-		url: "http://10.100.5.20:9763/ivote/count",
+		url: APP_URL+"count",
 		dataType: "json",
 		success: function( response ) {
 
-      $("#total_votes").text("Total Votes : 9");
+      $("#total_votes").text("Total Votes : "+(response.yes + response.no));
 			var data = [["Yes",response.yes],["No",response.no]];
 			plot1.series[0].data = data;
 			plot1.replot();

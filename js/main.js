@@ -1,8 +1,8 @@
-
+var APP_URL = "http://10.100.5.20:9763/ivote/";
 
 function vote(decision){
 	$.ajax({
-		url: "http://10.100.5.20:9763/ivote/"+decision,
+		url: APP_URL + decision,
 		// the name of the callback parameter, as specified by the YQL service
 		jsonp: "callback",
 		// tell jQuery we're expecting JSONP
@@ -16,7 +16,7 @@ function vote(decision){
 
 function reset(){
 	$.ajax({
-		url: "http://10.100.5.20:9763/ivote/reset",
+		url: APP_URL + "reset",
 		// the name of the callback parameter, as specified by the YQL service
 		jsonp: "callback",
 		// tell jQuery we're expecting JSONP
