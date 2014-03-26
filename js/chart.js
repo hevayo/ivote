@@ -63,7 +63,6 @@ $(document).ready(function(){
           showMarker: false
       },
       axesDefaults: {
-          showTicks: false,
           showTickMarks: false       
       }
  });;
@@ -100,7 +99,6 @@ $(document).ready(function(){
           showMarker: false
       },
       axesDefaults: {
-          showTicks: false,
           showTickMarks: false       
       }
       });
