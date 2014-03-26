@@ -62,7 +62,7 @@ var archive = application.get('archive');
 
           <div class="mastfoot">
             <div class="inner">
-              <p><a href="http://wso2.com">WSo2</a> Con 2014.</p>
+              <p><a href="http://wso2.com">WSO2</a>Con 2014.</p>
             </div>
           </div>
 
