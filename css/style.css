@@ -48,6 +48,8 @@
   font-size: 35px;
 }
 
+.vote_but:active{ background-color: #FF9; }
+
 
 
 #masthead_brand {
