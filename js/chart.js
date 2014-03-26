@@ -58,6 +58,13 @@ $(document).ready(function(){
         yaxis: {
           pad: 0 
         }
+      },
+      seriesDefaults: {
+          showMarker: false
+      },
+      axesDefaults: {
+          showTicks: false,
+          showTickMarks: false       
       }
  });;
  window.setInterval(function(){
@@ -87,8 +94,16 @@ $(document).ready(function(){
         },
         yaxis: {
           pad: 0 
-        }
-      }});
+        }        
+      },
+      seriesDefaults: {
+          showMarker: false
+      },
+      axesDefaults: {
+          showTicks: false,
+          showTickMarks: false       
+      }
+      });
 
 
       plot2.destroy();
