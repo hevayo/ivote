@@ -1,6 +1,16 @@
 <%
-var votes = application.get('votes');
-if(votes)
-votes.push("Yes");
+var duration = 60000;
+var start = application.get('start');
+var now =  new Date().getTime();
+print(start);
+
+if((start + duration) > now){
+	var votes = application.get('votes');
+	if(votes){
+		votes.push("Yes");
+		print("Yes");
+	}
+}
+
 %>
 YES

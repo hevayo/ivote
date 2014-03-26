@@ -1,29 +1,35 @@
 <%
+var duration = 62000;
+var start = application.get('start');
+var now =  new Date().getTime();
+
 response.contentType = "application/json; charset=UTF-8";
 var votes = application.get('votes');
 	if(votes){
 		application.put('votes',[]);
 
-		var count = application.get('count');
-		for(var i=0;i < votes.length; i++){
-			if(votes[i] == "Yes"){
-				count.yes++;
+		if((start + duration) > now){
+			var count = application.get('count');
+			for(var i=0;i < votes.length; i++){
+				if(votes[i] == "Yes"){
+					count.yes++;
+				}
+				else{
+					count.no++;
+				}
 			}
-			else{
-				count.no++;
+			var history = application.get("history");
+			history.push({"yes":count.yes,"no":count.no});
+			application.put("history",history);
+		
+			var reset = application.get('reset');
+			if(reset){
+				application.put('reset', false );
 			}
+
+			print({ "data" : votes , "reset":reset});
+		}else{
+			print({ "data" : [] , "reset":false});
 		}
-		var history = application.get("history");
-		history.push({"yes":count.yes,"no":count.no});
-		application.put("history",history);
-
-
-
-		var reset = application.get('reset');
-		if(reset){
-			application.put('reset', false );
-		}
-
-		print({ "data" : votes , "reset":reset});
 	}
 %>

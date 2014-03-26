@@ -22,10 +22,9 @@ if(votes == null){
 <!-- Optional theme -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/cover.css">
-
 
 <script src="js/jquery.min.js"></script>
+<script src="js/jquery.countdown.js"></script>
 <script src="js/main.js"></script>
 <script language="javascript" type="text/javascript" src="js/jquery.jqplot.min.js"></script>
 <script type="text/javascript" src="js/jqplot.pieRenderer.min.js"></script>
@@ -42,8 +41,84 @@ if(votes == null){
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+      html{ height:100%;}
+    </style>
+    <style type="text/css">
+      .cntSeparator {
+        font-size: 54px;
+        margin: 10px 7px;
+        color: #000;
+      }
+      .desc { margin: 7px 3px; }
+      .desc div {
+        float: left;
+        font-family: Arial;
+        width: 70px;
+        margin-right: 65px;
+        font-size: 13px;
+        font-weight: bold;
+        color: #000;
+      }
+    </style>
+
+
   </head>
 
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><span  style="font-family:'fontellob';color:#FF6600;">iVote</span></a>
+        </div>
+          <ul class="nav navbar-nav navbar-right">
+
+            <li><a href="index.jag">Go to Poll page</a></li>
+            <button class="btn btn-primary navbar-btn" id="reset">Reset</button>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="row marketing">
+        <div class="col-md-3 " >
+        <div id="counter"></div>
+        <div class="desc">
+          <div>Seconds</div>
+        </div>        
+        </div>
+        <div class="col-md-9 ">
+          <h3 id="counter_status"></h3>
+        </div>
+      </div>      
+      <h3 id="total_votes">Total Votes : 0</h3>
+      <div class="row marketing">
+      <div  class="col-md-12 chart_block" id="linechart" style="height:300px;">
+      </div>
+      </div>
+      <div class="row marketing">
+        <div class="col-md-6 chart_block" id="pichart" style="height:300px;">
+        </div>
+        <div class="col-md-6 chart_block" id="barchart" style="height:300px;">
+        </div>
+      </div> 
+    </div> <!-- /container -->
+    <div class="footer">
+              <center><p><a href="http://wso2.com">WSO2Con</a> 2014.</p></center>
+    </div>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>  
+<% /*
   <body>
 
     <div class="site-wrapper">
@@ -62,19 +137,15 @@ if(votes == null){
           </div>
 
           <div class="inner cover">
+          <center><h3 id="total_votes">Total Votes : 0</h3></center>
       <div class="row marketing">
-        <div class="col-lg-12">
-            <h3 id="total_votes">Total Votes : 0</h3>
-            <div id="linechart" style="height:300px;width:620px; "></div>
+        <div class="col-lg-12 chart_block" id="linechart" style="height:300px;">
         </div>
       </div> 
       <div class="row marketing">
-        <div class="col-lg-6">
-            <div id="pichart" style="height:300px;width:300px; "></div>
+        <div class="col-lg-6 chart_block" id="pichart" style="height:300px;">
         </div>
-
-        <div class="col-lg-6">
-            <div id="barchart" style="height:300px;width:300px; "></div>
+        <div class="col-lg-6 chart_block" id="barchart" style="height:300px;">
         </div>
       </div>            
             
@@ -97,5 +168,5 @@ if(votes == null){
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/bootstrap.min.js"></script>
 
-  </body>
+  </body> */ %>
 </html>

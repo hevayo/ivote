@@ -60,4 +60,4 @@
 #chartdiv{ margin: auto; margin-bottom: 20px;}
 #linechart { margin: auto; }
 
-#
+#total_votes { position: absolute; top:0px; z-index: 10000000000;margin-left: 100px;margin-top: 10px}

@@ -27,12 +27,21 @@ function reset(){
 			console.log( response ); // server response
 		}
 	});
+
+	$("#counter").html("");
+	$("#counter_status").html("<span style=\"color:green;font-family:'fontello';\">Start Voting</span>")
+	$('#counter').countdown({
+  		image: 'img/digits.png',
+  		startTime: '60',
+  		timerEnd: function(){ $("#counter_status").html("<span style=\"color:red;font-family:'fontello';\">Voting Ended</span>")},
+  		format: 'ss'
+	});
 }
 
 
 $(document).ready(function(){
 
-	$("#say_yes").click(function(){
+	$("#say_yes").click(function(){		
 		vote("yes");
 	});
 

@@ -1,5 +1,15 @@
 <%
-var votes = application.get('votes');
-if(votes)
-votes.push("No");
-%>No
+var duration = 60000;
+var start = application.get('start');
+var now =  new Date().getTime();
+print(start);
+
+if((start + duration) > now){
+	var votes = application.get('votes');
+	if(votes){
+		votes.push("No");
+		print("No");
+	}
+}
+
+%>
