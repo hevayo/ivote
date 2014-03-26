@@ -1,5 +1,6 @@
 <%
 var votes = application.get('votes');
+if(votes)
 votes.push("Yes");
 %>
 YES

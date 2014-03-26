@@ -1,6 +1,7 @@
 <%
 	response.contentType = "application/json; charset=UTF-8";
 	var count = application.get('count');
-	count.history = application.get('history');
-	print(count);
+	if(count)
+		count.history = application.get('history');
+		print(count);
 %>
