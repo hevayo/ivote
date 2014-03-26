@@ -47,10 +47,10 @@ var archive = application.get('archive');
             <nav>
       	    <ul class="navi">
       	        <li>
-      	          <button href="#" id="say_yes" class="vote_but" style="color:green">Yes</button>
+      	          <button href="#" id="say_yes" class="vote_but btn btn-default" style="color:green">Yes</button>
       	      	</li>
       	        <li>
-      	          <button href="#" id="say_no"  class="vote_but"  style="color:red">No</button>
+      	          <button href="#" id="say_no"  class="vote_but btn btn-default"  style="color:red">No</button>
       	        </li>
       	    </ul>
       		</nav> 
