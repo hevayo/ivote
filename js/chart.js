@@ -1,4 +1,5 @@
-var APP_URL = "http://10.100.5.20:9763/ivote/";
+var APP_URL = "http://localhost:9763/ivote/";
+//var APP_URL = "http://54.84.213.30:9763/ivote/"
 
 $(document).ready(function(){
 
@@ -49,7 +50,16 @@ $(document).ready(function(){
   });
 
 
- var plot3 = jQuery.jqplot ('linechart', [[0],[0]],{seriesColors:seriesColors});;
+ var plot3 = jQuery.jqplot ('linechart', [[0],[0]],{seriesColors:seriesColors,
+      axes: {
+        xaxis: {
+          pad: 0
+        },
+        yaxis: {
+          pad: 0 
+        }
+      }
+ });;
  window.setInterval(function(){
   	$.ajax({
 		url: APP_URL+"count",
@@ -70,7 +80,15 @@ $(document).ready(function(){
         no_line.push(response.history[i].no);
       }      
       plot3.destroy();
-			plot3 = jQuery.jqplot ('linechart', [yes_line,no_line],{seriesColors:seriesColors});
+			plot3 = jQuery.jqplot ('linechart', [yes_line,no_line],{seriesColors:seriesColors,
+      axes: {
+        xaxis: {
+          pad: 0
+        },
+        yaxis: {
+          pad: 0 
+        }
+      }});
 
 
       plot2.destroy();

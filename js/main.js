@@ -1,4 +1,5 @@
-var APP_URL = "http://10.100.5.20:9763/ivote/";
+var APP_URL = "http://localhost:9763/ivote/";
+//var APP_URL = "http://54.84.213.30:9763/ivote/"
 
 function vote(decision){
 	$.ajax({
